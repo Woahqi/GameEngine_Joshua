@@ -1,4 +1,4 @@
-#include "SFML\graphics.hpp"
+#include "SFML\Graphics.hpp"
 #include "Engine.h"
 
 int main(int argc, char* args[])

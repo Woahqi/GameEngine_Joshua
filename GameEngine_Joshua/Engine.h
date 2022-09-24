@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include "ECS.h"
 #include "sfml/graphics.hpp"
 
 class Engine

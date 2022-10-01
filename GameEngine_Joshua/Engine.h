@@ -3,13 +3,21 @@
 #include <iostream>
 #include "ECS.h"
 #include "sfml/graphics.hpp"
+#include "Components.h"
+#include "Systems/RenderingSystem.h"
 
 class Engine
 {
 public:
+	ECS::World* world = nullptr;
 	sf::RenderWindow* window = nullptr;
+
 	void Start(sf::RenderWindow* win);
 	static Engine& GetInstance();
+	void AddSystem(ECS::EntitySystem* newSys);
+
+
+
 
 private:
 	bool bQuit;

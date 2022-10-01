@@ -7,6 +7,12 @@ Engine& Engine::GetInstance()
 	// Get only instance of the engine so it can Start.
 }
 
+void Engine::AddSystem(ECS::EntitySystem* newSys)
+{
+	world->registerSystem(newSys);
+	world->enableSystem(newSys);
+}
+
 
 
 
@@ -43,4 +49,5 @@ void Engine::Update()
 
 		}
 	}
+	world->tick(10.0f);
 }

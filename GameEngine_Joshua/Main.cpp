@@ -11,21 +11,35 @@ int main(int argc, char* args[])
 
 	// Create the world for attaching entitys and systems to
 	gameEngine.world = ECS::World::createWorld();
+
+	ECS::Entity* background;
 	ECS::Entity* stickFigure;
+	ECS::Entity* tux;
+
 	// add systems to the engine
 	gameEngine.AddSystem(new RenderingSystem());
-	// Create and assign 250 entities to the world
-	for (int x = 0; x < 25; x++)
-	{
-		for (int y = 0; y < 10; y++)
-		{
-			stickFigure = gameEngine.world->create();
-			// assign components to entitys after creation
-			stickFigure->assign<Transform>(x * 25, y * 32);
-			stickFigure->assign<Sprite2D>("../debug/pics/hero.png");
-			std::cout << stickFigure->getEntityId() << " is the entity id. " << std::endl;
-		}
-	}
+	gameEngine.AddSystem(new AnimationSystem());
+	
+	// Create and assign entitys to the world
+	background = gameEngine.world->create();
+	stickFigure = gameEngine.world->create();
+	tux = gameEngine.world->create();
+
+	//assign components to entitys after creation.
+	background->assign<Transform>(0, 0);
+	background->assign<Sprite2D>("../debug/pics/bg.jpg");
+	stickFigure->assign<Transform>(300, 300);
+	stickFigure->assign<Sprite2D>("../debug/pics/herosheet.png");
+	stickFigure->assign<Animator>(32, 32, 200.0f, 4, 1);
+	tux->assign<Transform>(200, 200);
+	tux->assign<Sprite2D>("../debug/pics/tux_from_linux.png");
+	tux->assign<Animator>(56, 72, 2000.0f, 3, 9);
+	tux->get<Animator>()->currentRow = 0;
+
+	std::cout << "entity number: " << background->getEntityId() << std::endl;
+	std::cout << "entity number: " << stickFigure->getEntityId() << std::endl;
+	std::cout << "entity number: " << tux->getEntityId() << std::endl;
+
 
 	// pass window Reference to engine and start
 	gameEngine.Start(&window);

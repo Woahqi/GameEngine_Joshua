@@ -5,12 +5,26 @@ struct Transform
 {
 public:
 	ECS_DECLARE_TYPE;
-	float xPos, yPos, rotation;
+	float xPos, yPos, rotation, xSpeed, ySpeed, xSpeedMod, ySpeedMod;
+	bool bColliding = false;
 
-	Transform(float newX, float newY) : xPos(newX), yPos(newY)
+	Transform(float newX, float newY, float xSpeed = 0.0f, float ySpeed = 0.0f, float rotation = 0.0f) : xPos(newX), yPos(newY)
 	{
-		this->rotation = 0.0f;
+		this->xSpeed = newX;
+		this->ySpeed = newY;
+		this->xSpeedMod = xSpeed;
+		this->ySpeedMod = ySpeed;
+		this->rotation = rotation;
 	}
+	void Move()
+	{
+		if (bColliding == false)
+		{
+			this->xPos += xSpeed;
+			this->yPos += ySpeed;
+		}
+	}
+		
 };
 ECS_DEFINE_TYPE(Transform);
 
@@ -55,6 +69,23 @@ public:
 		this->bFacingRight = true;
 
 	}
-
+	
 };
+
 ECS_DEFINE_TYPE(Animator);
+
+
+
+struct InputController
+{
+public:
+	ECS_DECLARE_TYPE;
+	bool bInputActive;
+	bool w, a, s, d, left, right, up, down, space;
+	InputController()
+	{
+		std::memset(this, false, sizeof(InputController));
+		bInputActive = true;
+	}
+};
+ECS_DEFINE_TYPE(InputController);

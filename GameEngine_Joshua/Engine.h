@@ -6,6 +6,12 @@
 #include "Components.h"
 #include "Systems/RenderingSystem.h"
 #include "Systems/AnimationSystem.h"
+#include "Systems/MovementSystem.h"
+#include "Systems/InputSystem.h"
+//keep function pointer into entity to improve code
+typedef void(*CallbackEntity)(ECS::Entity*);
+
+
 
 class Engine
 {

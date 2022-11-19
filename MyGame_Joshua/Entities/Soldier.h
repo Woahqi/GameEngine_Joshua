@@ -7,7 +7,7 @@ class MovementSystem;
 class Soldier: public Entity
 {
 private:
-	int fireDelay;
+	int fireDelay{ 0 };
 	
 public:
 	Soldier() = default;

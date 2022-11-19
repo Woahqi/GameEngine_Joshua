@@ -2,7 +2,7 @@
 #include "Engine.h"
 class Entity
 {
-protected:
+public:
 	ECS::Entity* entity;
 
 //public:

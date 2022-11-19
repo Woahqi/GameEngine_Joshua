@@ -7,7 +7,7 @@ Soldier::Soldier(std::string picture, sf::Vector2f location)// : Entity(picture,
 	entity = engine.world->create();
 	entity->assign<Sprite2D>(picture);
 	entity->assign<Transform>(location.x, location.y, 0.3f, 0.3f);
-
+	entity->assign<BoxCollider>();
 	entity->assign<CallbackEntity>(&Soldier::Fire);
 }
 

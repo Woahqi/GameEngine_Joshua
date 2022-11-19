@@ -8,6 +8,7 @@
 #include "Systems/AnimationSystem.h"
 #include "Systems/MovementSystem.h"
 #include "Systems/InputSystem.h"
+#include "Systems/PhysicsSystem.h"
 //keep function pointer into entity to improve code
 typedef void(*CallbackEntity)(ECS::Entity*);
 

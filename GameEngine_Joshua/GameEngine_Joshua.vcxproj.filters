@@ -16,6 +16,12 @@
     <Filter Include="Systems">
       <UniqueIdentifier>{9dd70901-ec90-4ad6-af20-83ef1a9be8c3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{41ff4ccc-1198-4097-a169-6f11742fe171}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\GUI_Components">
+      <UniqueIdentifier>{c2a56595-946c-490a-9b79-882297e5ddb6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -35,6 +41,21 @@
     </ClCompile>
     <ClCompile Include="Systems\MovementSystem.cpp">
       <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="Systems\PhysicsSystem.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\States.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\GUI_Components\Button.cpp">
+      <Filter>Interface\GUI_Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\GUI_Components\ButtonMap.cpp">
+      <Filter>Interface\GUI_Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\PauseMenu.cpp">
+      <Filter>Interface</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +79,21 @@
     </ClInclude>
     <ClInclude Include="Systems\MovementSystem.h">
       <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\PhysicsSystem.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\States.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\GUI_Components\Button.h">
+      <Filter>Interface\GUI_Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\GUI_Components\ButtonMap.h">
+      <Filter>Interface\GUI_Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\PauseMenu.h">
+      <Filter>Interface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,6 +1,7 @@
 #include "SFML\Graphics.hpp"
 #include "../GameEngine_Joshua/Engine.h"
-#include "Entities/Player.h"
+#include "Entities/player.h"
+#include "Entities/Dummy.h"
 
 int main(int argc, char* args[])
 {
@@ -23,6 +24,7 @@ int main(int argc, char* args[])
 	gameEngine.AddSystem(new AnimationSystem());
 	gameEngine.AddSystem(new InputSystem());
 	gameEngine.AddSystem(new MovementSystem());
+	gameEngine.AddSystem(new PhysicsSystem());
 
 
 // Create and assign entitys to the world
@@ -32,7 +34,8 @@ int main(int argc, char* args[])
 	// 
 	//Create instances of entities
 
-	Player player = Player(sf::Vector2f(300, 300));
+	Entity player = Player(sf::Vector2f(300, 300));
+	Entity dummy = Dummy("../debug/pics/OrangeBox.png", sf::Vector2f(400, 400));
 
 
 	
